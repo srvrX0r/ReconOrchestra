@@ -1,25 +1,32 @@
 # Responsible Disclosure Report
 
+**Summary:**  
+(A 2–3 sentence non-actionable summary.)
 
-**Summary:** Short non-actionable summary of the issue.
+**Scope & Authorization:**  
+- Target(s): (list domains / IPs in-scope)
+- Authorization proof: (e.g., signed PDF filename or ticket reference)
 
-
-**Scope & Authorization:** Confirm the tester is authorized to perform these tests and include proof or a reference to the written authorization.
-
-
-**Affected URLs / Artifacts:** Provide a sanitized list (no PII, no tokens).
-
+**Affected URLs / Artifacts (sanitized)**  
+- https://example.com/path — (do not include tokens or secrets)
 
 **Severity:** informational / low / medium / high / critical
 
+**High-level Impact:**  
+(Conceptual impact without exploit details)
 
-**High-level Impact:** Describe conceptual impact (data exposure, auth bypass, etc.) without exploit strings.
+**How to reproduce (skeleton, non-actionable):**  
+1. Make a GET request to `https://target/endpoint` with parameter `X` set to `A` and observe server response 302 (no payloads, no exploit strings).  
+2. Observe header `X-Example`.
 
+**Suggested Fixes:**  
+- Validate and sanitize input `X` at server-side.  
+- Harden header parsing.  
+- Add WAF rule: block suspicious payload shapes (example: long query strings).
 
-**How to reproduce (skeleton):** Provide non-exploit reproduction skeleton steps.
+**Contact & Proof-of-Authorization:**  
+- Name:  
+- Email:  
+- Link to authorization doc:  
 
-
-**Suggested Fixes:** Developer remediation steps.
-
-
-**Contact & Proof-of-Authorization:** Provide contact information and reference to authorization.
+**Request:** Please acknowledge receipt and provide an estimated remediation timeline.
