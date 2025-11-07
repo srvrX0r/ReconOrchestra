@@ -6,7 +6,7 @@
 # OWNER: Rodrigo Coll
 # GITHUB: @srvrX0r
 # COPYRIGHT: © 2025 Rodrigo Coll. All Rights Reserved.
-# LICENSE: Apache License 2.0 (see LICENSE file)
+# LICENSE: GNU Affero Public License 3.0 , 19 Novemeber 2007 (see LICENSE file)
 #
 # SOLE PROPRIETORSHIP NOTICE:
 # This repository and all its contents are the sole property of Rodrigo Coll.
@@ -17,10 +17,10 @@
 # - Legal Owner: Rodrigo Coll (Individual/Sole Proprietor)
 # - GitHub Account: @srvrX0r
 # - Copyright Holder: Rodrigo Coll
-# - All Rights Reserved except as granted by Apache License 2.0
+# - All Rights Reserved except as granted by GNU Affero Public License 3.0 , 19 Novemeber 2007
 #
 # NO TRANSFER OF OWNERSHIP:
-# Contributions are accepted under the Apache 2.0 license, but do not
+# Contributions are accepted under the GNU Affero Public License 3.0 , 19 Novemeber 2007, but do not
 # transfer ownership. All contributions become part of this work while
 # maintaining the contributor's copyright on their specific contributions,
 # with Rodrigo Coll retaining compilation copyright and sole proprietorship.
@@ -82,9 +82,9 @@
 # =============================================================================
 # INTELLECTUAL PROPERTY STATEMENT
 # =============================================================================
-
 #
-# These are released under Apache License 2.0 while maintaining copyright
+#
+# These are released under GNU Affero Public License 3.0 while maintaining copyright
 # ownership by Rodrigo Coll.
 #
 # =============================================================================
