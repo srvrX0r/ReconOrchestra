@@ -14,6 +14,8 @@ from pathlib import Path
 from datetime import datetime
 import subprocess
 from typing import List, Dict, Any
+import argparse
+
 
 # ---------- Configuration ----------
 AMASS_CMD = "amass enum -passive -d {domain} -json -"  # streams JSON to stdout
@@ -23,6 +25,13 @@ NUCLEI_CMD = "nuclei -l {input_file} -json -o {out_file} -severity critical,high
 # NOTE: Adjust commands to your environment / template selection. Use -timeout, -c, etc. as needed.
 
 OUTPUT_DIR = Path("orchestrator_output")
+parser = argparse.ArgumentParser()
+parser.add_argument("domain", help="Target domain")
+parser.add_argument("--dry-run", action="store_true", help="Do not execute external commands")
+parser.add_argument("--no-llm", action="store_true", help="Do not call LLM provider")
+parser.add_argument("--fixtures", action="store_true", help="Load test fixtures")
+args = parser.parse_args()
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "<PUT_YOUR_KEY_IN_ENV_OR_HERE>")  # recommended: set as env var
 OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"  # example, adapt if you use another client
 LLM_MODEL = "gpt-5-thinking-mini"  # name for clarity in prompts; change if using other model via provider
@@ -45,6 +54,7 @@ async def run_cmd(cmd: str, timeout: int = 300) -> str:
     if proc.returncode != 0 and stdout is None:
         raise RuntimeError(f"Command failed: {cmd}\nReturn code: {proc.returncode}\nStderr: {stderr.decode()}")
     return stdout.decode(errors="ignore")
+
 
 def parse_json_lines(jlines: str) -> List[Dict[str, Any]]:
     """Parse JSON lines or a JSON array string into Python list."""
@@ -410,4 +420,4 @@ if __name__ == "__main__":
         print("Usage: python orchestrator.py example.com")
         sys.exit(1)
     domain = sys.argv[1].strip()
-    asyncio.run(main(domain))
+    asyncio.run(main(args.domain))
