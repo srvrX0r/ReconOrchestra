@@ -22,3 +22,42 @@ orchestrator_output/
 # secrets
 secrets/
 .secrets/
+
+####Updated  addtions:############
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Runtime artifacts
+orchestrator_output/
+*.jsonl
+*.log
+*.sqlite3
+
+# Secrets / keys
+secrets/
+*.pem
+*.key
+
+# Docker
+docker-compose.override.yml
+.env.local
+
+# Misc
+coverage.xml
+htmlcov/
