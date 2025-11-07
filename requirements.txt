@@ -1,0 +1,7 @@
+# Minimal runtime / dev libs (pin exact versions in your repo as needed)
+requests>=2.31.0
+python-dotenv>=1.0.0
+pre-commit>=3.4.0
+detect-secrets>=1.5.0
+ruff>=0.20.0
+pytest>=7.0.0
